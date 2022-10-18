@@ -1,0 +1,28 @@
+.login-container{
+    height: 100vh;;
+}
+.login-container-group{
+    display: flex;
+    height: 100%;
+}
+.login-container-group-one{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container-group-two{
+    border: solid 2px orange;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+.login-container-group-two form{
+    width: 100%;
+}
+.login-container-group-one img{
+    max-height: 90%;
+    max-width: 100%;
+}

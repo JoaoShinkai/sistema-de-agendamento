@@ -13,4 +13,30 @@ export class HourRepository implements IHourRepository {
   async create(data: IHourDTO): Promise<IHourDTO> {
     return this.repository.save(data);
   }
+
+  async list(store: number): Promise<IHourDTO[]> {
+    return this.repository.find({
+      where: {
+        store: {
+          id: store
+        }
+      },
+      relations: ['weekday']
+    });
+  }
+
+  async delete(id: number): Promise<void> {
+    await this.repository.softDelete(id);
+  }
+
+  async find(id: number, store: number): Promise<IHourDTO | undefined> {
+    return this.repository.findOne({
+      where: {
+        id,
+        store: {
+          id: store
+        }
+      }
+    });
+  }
 }

@@ -14,4 +14,7 @@ hourRoutes.post(
   hourController.create
 );
 
+hourRoutes.get('/', storeAuth, hourController.list);
+hourRoutes.delete('/:id', storeAuth, hourController.delete);
+
 export { hourRoutes };

@@ -1,5 +1,6 @@
 import { LoadingButton } from '@mui/lab';
-import { InputAdornment, TextField } from '@mui/material';
+import { TextField } from '@mui/material';
+import { api } from '../../services/api';
 import customToast from '../../toast/customToast';
 import './login.css';
 
@@ -11,7 +12,7 @@ export default function Login(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    function login(e){
+    async function login(e){
         e.preventDefault();
 
         if(email.length < 1 || password.length < 1){
@@ -19,7 +20,17 @@ export default function Login(){
             return;
         }
 
-        alert(`${email}, ${password}`);
+        try{
+            const res = await api.post('/store/login', {
+                email,
+                password
+            })
+
+            console.log(res);
+        }catch(err){
+            console.log(err)
+            customToast.error(err.response.data.message);
+        }
     }
 
     return(
@@ -45,13 +56,6 @@ export default function Login(){
                             label="Email"
                             defaultValue={email}
                             onChange={ e => setEmail(e.target.value) }
-                            InputProps={{
-                                startAdornment: (
-                                    <InputAdornment position='start'>
-                                        <i className='fa-solid fa-user'></i>
-                                    </InputAdornment>
-                                )
-                            }}
                             variant="filled"
                             className='my-1'
                             fullWidth

@@ -12,17 +12,90 @@
     align-items: center;
 }
 .login-container-group-two{
-    border: solid 2px orange;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5%;
+    padding: 3%;
+    position: relative;
 }
 .login-container-group-two form{
     width: 100%;
+    padding: 30px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 2px;
+    box-shadow:  0 0 9px 0 rgb(199, 199, 199);
 }
 .login-container-group-one img{
     max-height: 90%;
     max-width: 100%;
 }
+.login-container-form-title{
+    color: #a43ea4;
+    font-size: 23px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-container-title-icon{
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.login-container-title-icon path{
+    fill: transparent;
+    stroke-width: 7;
+    stroke: #a43ea4;
+    stroke-dasharray: 1500;
+    stroke-dashoffset: 1500;
+    animation: animate-logo 7s linear infinite;
+}
+/* .login-container-title-icon:hover path{
+    
+} */
+
+@keyframes animate-logo{
+    0%{
+        stroke-dashoffset: 1500;
+        fill: #b856b8;
+    }
+    20%{
+        stroke-dashoffset: 1500;
+        fill: transparent;
+    }
+    40%{
+        stroke-dashoffset: 0;
+    }
+    60%{
+        stroke-dashoffset: 1500;
+    }
+    80%{
+        stroke-dashoffset: 3000;
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 3000;
+        fill: #a43ea4;
+    }
+}
+
+/* @keyframes animate-logo{
+    0%{
+        stroke-dashoffset: 0;
+    }
+    40%{
+        stroke-dashoffset: 1500;
+    }
+    80%{
+        stroke-dashoffset: 3000;
+        fill: transparent;
+    }
+    100%{
+        stroke-dashoffset: 3000;
+        fill: #a43ea4;
+    }
+} */

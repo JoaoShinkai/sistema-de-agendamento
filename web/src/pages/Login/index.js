@@ -1,16 +1,21 @@
 import { LoadingButton } from '@mui/lab';
 import { TextField } from '@mui/material';
-import { api } from '../../services/api';
 import customToast from '../../toast/customToast';
 import './login.css';
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CalendarImage from '../../assets/calendar-animate.svg';
+import { StoreContext } from '../../contexts/store';
 
 export default function Login(){
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const { loginContext } = useContext(StoreContext);
+
+    const navigate = useNavigate();
 
     async function login(e){
         e.preventDefault();
@@ -21,16 +26,15 @@ export default function Login(){
         }
 
         try{
-            const res = await api.post('/store/login', {
-                email,
-                password
-            })
+            await loginContext(email, password);
 
-            console.log(res);
+            navigate('/dashboard');
+
         }catch(err){
-            console.log(err)
-            customToast.error(err.response.data.message);
+            // console.log(err);
         }
+
+        
     }
 
     return(
@@ -52,7 +56,6 @@ export default function Login(){
                         </div>
                         <hr />
                         <TextField
-                            id="filled-required"
                             label="Email"
                             defaultValue={email}
                             onChange={ e => setEmail(e.target.value) }
@@ -62,7 +65,6 @@ export default function Login(){
                             color='secondary'
                         />
                         <TextField
-                            id="filled-required"
                             label="Senha"
                             defaultValue={password}
                             onChange={ e => setPassword(e.target.value) }

@@ -12,29 +12,29 @@ export default function Login(){
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    const { loginContext } = useContext(StoreContext);
+    const [isLoading, setIsLoading] = useState(false);
 
     const navigate = useNavigate();
 
+    const { loginContext } = useContext(StoreContext);
+
+
     async function login(e){
+        setIsLoading(true);
         e.preventDefault();
 
         if(email.length < 1 || password.length < 1){
             customToast.error("Todos os campos devem estar preenchidos");
+            setIsLoading(false);
             return;
         }
 
-        try{
-            await loginContext(email, password);
+        const login = await loginContext(email, password);
 
-            navigate('/dashboard');
-
-        }catch(err){
-            // console.log(err);
+        if(login){
+           navigate("/dashboard") 
         }
-
-        
+        setIsLoading(false);
     }
 
     return(
@@ -74,7 +74,7 @@ export default function Login(){
                             type="password"
                             color='secondary'
                         />
-                        <LoadingButton type='submit' style={{backgroundColor: "#a43ea4"}} loading={false} variant="contained" className='my-4' fullWidth >
+                        <LoadingButton type='submit' color='secondary' loading={isLoading} variant="contained" className='my-4' fullWidth >
                             Entrar
                         </LoadingButton>
                     </form>

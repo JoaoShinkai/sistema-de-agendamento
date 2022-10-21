@@ -1,19 +1,16 @@
-import { Button } from '@mui/material';
-import { useContext } from 'react';
-import { StoreContext } from '../../contexts/store';
+
+import Sidebar from '../../components/Sidebar';
+
+import './dashboard.css';
 
 export default function Dashboard(){
 
-    const { logoutContext } = useContext(StoreContext);
-
-    function logout(){
-        logoutContext();
-    }
-
     return(
         <div>
-            Dashboard
-            <Button onClick={logout}>Sair</Button>
+            <Sidebar />
+            <div className='dashboard-container'>
+                Dashboard
+            </div>
         </div>
     )
 }

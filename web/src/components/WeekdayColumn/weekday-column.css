@@ -1,0 +1,25 @@
+.weekday-column{
+    /* border: solid 2px orange; */
+    border-right: 1px solid lightgray;
+    padding: 12px;
+    width: 14.28%;
+}
+.weekday-column-title{
+    padding: 6px;
+    text-align: center;
+    border-bottom: solid 1px lightgray;
+}
+.weekdaycolumn-btn-add{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: dashed 1px rgb(180, 180, 180);
+    text-align: center;
+    cursor: pointer;
+}
+.weekdaycolumn-btn-add:hover{
+    background-color: lightgrey;
+}
+.weekday-column-content{
+    padding: 15px 0;
+}

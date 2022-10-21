@@ -1,0 +1,12 @@
+.hours-container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hours-container-weekdays{
+    border: solid 1px lightgray;
+    display: flex;
+    justify-content: center;
+    width: 95%;
+}

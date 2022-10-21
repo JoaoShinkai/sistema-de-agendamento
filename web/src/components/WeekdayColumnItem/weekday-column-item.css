@@ -1,0 +1,23 @@
+.weekday-column-item{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+}
+.weekday-column-item-description{
+    flex: 1;
+    background-color: lightgray;
+    border-radius: 6px;
+    padding: 8px;
+    text-align: center;
+}
+.weekday-column-item-icon{
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    background-color: lightgray;
+}

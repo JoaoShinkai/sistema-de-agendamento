@@ -9,11 +9,10 @@ export default class StoreModule {
 
         localStorage.setItem('token', res.data.token);
 
-        return res;
+        return res.data;
     }
 
     async authenticate(){
-
         const token = localStorage.getItem('token');
 
         if(token){

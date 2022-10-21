@@ -8,26 +8,29 @@ const storeModule = new StoreModule();
 
 export const StoreContext = createContext({});
 
+
+
 function StoreProvider({children}){
     const [store, setStore] = useState(null);
+    const [token, setToken] = useState(null);
     const [loadingProvider, setLoadingProvider] = useState(true);
-
 
     useEffect(() => {
         async function authStore(){
-            const token = localStorage.getItem('token');
+            const localToken = localStorage.getItem('token');
 
-            if(token){
+            if(localToken){
                 try{
                     const req = {
                         headers: {
-                            authorization: token
+                            authorization: localToken
                         }
                     }
 
                     const res = await api.get('/store/authenticate', req);
 
                     setStore(res.data);
+                    setToken(localToken);
                     setLoadingProvider(false);
                 }catch(err){
                     console.log(err);
@@ -47,13 +50,16 @@ function StoreProvider({children}){
         try{
             const store = await storeModule.login(email, password);
 
-            setStore(store);
+            setStore(store.store);
+            setToken(store.token);
             setLoadingProvider(false);
+
+            return true;
 
         }catch(err){
             setLoadingProvider(false);
-            console.log(err);
-            customToast.error("Erro");
+            customToast.error(err.response.data.message);
+            return false;
         }
     }
 
@@ -70,7 +76,9 @@ function StoreProvider({children}){
             logged: !!store,
             loadingProvider,
             loginContext,
-            logoutContext
+            logoutContext,
+            store,
+            token
         }}>
             {children}
         </StoreContext.Provider>

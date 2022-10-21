@@ -39,4 +39,18 @@ export class HourRepository implements IHourRepository {
       }
     });
   }
+
+  async listByWeekday(store: number, id: number): Promise<IHourDTO[]> {
+    return this.repository.find({
+      where: {
+        weekday: {
+          id
+        },
+        store: {
+          id: store
+        }
+      },
+      relations: ['store', 'weekday']
+    });
+  }
 }

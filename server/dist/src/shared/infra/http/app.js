@@ -7,6 +7,7 @@ require("@shared/container");
 const ErrorsHandler_1 = require("@shared/handlers/ErrorsHandler");
 const cors_1 = __importDefault(require("cors"));
 const express_1 = __importDefault(require("express"));
+require("reflect-metadata");
 require("../typeorm/index");
 const routes_1 = require("./routes");
 const app = (0, express_1.default)();

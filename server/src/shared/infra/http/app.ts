@@ -2,6 +2,7 @@ import '@shared/container';
 import { errorsHandler } from '@shared/handlers/ErrorsHandler';
 import cors from 'cors';
 import express from 'express';
+import 'reflect-metadata';
 import '../typeorm/index';
 import { routes } from './routes';
 

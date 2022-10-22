@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.storeRoutes = void 0;
+const AuthController_1 = require("@modules/auth/AuthController");
+const create_store_schema_1 = __importDefault(require("@modules/store/schemas/create-store.schema"));
+const update_store_schema_1 = __importDefault(require("@modules/store/schemas/update-store.schema"));
+const storeAuth_1 = __importDefault(require("@shared/infra/http/middlewares/storeAuth"));
+const celebrate_1 = require("celebrate");
+const express_1 = require("express");
+const StoreController_1 = __importDefault(require("../controllers/StoreController"));
+const storeRoutes = (0, express_1.Router)();
+exports.storeRoutes = storeRoutes;
+const storeController = new StoreController_1.default();
+const authController = new AuthController_1.AuthController();
+storeRoutes.post('/', [(0, celebrate_1.celebrate)({ [celebrate_1.Segments.BODY]: create_store_schema_1.default })], storeController.create);
+storeRoutes.post('/login', storeController.login);
+storeRoutes.put('/', storeAuth_1.default, [(0, celebrate_1.celebrate)({ [celebrate_1.Segments.BODY]: update_store_schema_1.default })], storeController.update);
+storeRoutes.get('/authenticate', authController.VerifyStoreToken);

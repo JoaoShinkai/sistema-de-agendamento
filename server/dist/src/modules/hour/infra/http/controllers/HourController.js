@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HourController = void 0;
-const CreateHourService_1 = __importDefault(require("@modules/hour/services/CreateHourService"));
-const DeleteHourService_1 = __importDefault(require("@modules/hour/services/DeleteHourService"));
-const ListHourByWeekdayService_1 = __importDefault(require("@modules/hour/services/ListHourByWeekdayService"));
-const ListHourService_1 = __importDefault(require("@modules/hour/services/ListHourService"));
+const CreateHourService_1 = __importDefault(require("../../../services/CreateHourService"));
+const DeleteHourService_1 = __importDefault(require("../../../services/DeleteHourService"));
+const ListHourByWeekdayService_1 = __importDefault(require("../../../services/ListHourByWeekdayService"));
+const ListHourService_1 = __importDefault(require("../../../services/ListHourService"));
 const tsyringe_1 = require("tsyringe");
 class HourController {
     async create(req, res, next) {

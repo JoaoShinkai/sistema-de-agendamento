@@ -12,7 +12,7 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const AppError_1 = require("@shared/errors/AppError");
+const AppError_1 = require("../../../shared/errors/AppError");
 const tsyringe_1 = require("tsyringe");
 let CreateStoreService = class CreateStoreService {
     constructor(storeRepository) {

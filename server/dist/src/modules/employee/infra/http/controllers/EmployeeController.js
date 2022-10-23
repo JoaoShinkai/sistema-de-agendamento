@@ -3,8 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const CreateEmployeeService_1 = __importDefault(require("@modules/employee/services/CreateEmployeeService"));
-const ListEmployeeService_1 = __importDefault(require("@modules/employee/services/ListEmployeeService"));
+const CreateEmployeeService_1 = __importDefault(require("../../../services/CreateEmployeeService"));
+const ListEmployeeService_1 = __importDefault(require("../../../services/ListEmployeeService"));
 const tsyringe_1 = require("tsyringe");
 class EmployeeController {
     async create(req, res, next) {

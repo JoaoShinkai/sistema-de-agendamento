@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const DefaultEntity_1 = __importDefault(require("@shared/infra/typeorm/entities/DefaultEntity"));
+const DefaultEntity_1 = __importDefault(require("../../../../../shared/infra/typeorm/entities/DefaultEntity"));
 const typeorm_1 = require("typeorm");
 let DaysOfTheWeek = class DaysOfTheWeek extends DefaultEntity_1.default {
 };

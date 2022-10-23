@@ -13,9 +13,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Hour = void 0;
-const DaysOfTheWeek_1 = __importDefault(require("@modules/daysOfTheWeek/infra/typeorm/entities/DaysOfTheWeek"));
-const Store_1 = __importDefault(require("@modules/store/infra/typeorm/entities/Store"));
-const DefaultEntity_1 = __importDefault(require("@shared/infra/typeorm/entities/DefaultEntity"));
+const DaysOfTheWeek_1 = __importDefault(require("../../../../daysOfTheWeek/infra/typeorm/entities/DaysOfTheWeek"));
+const Store_1 = __importDefault(require("../../../../store/infra/typeorm/entities/Store"));
+const DefaultEntity_1 = __importDefault(require("../../../../../shared/infra/typeorm/entities/DefaultEntity"));
 const typeorm_1 = require("typeorm");
 let Hour = class Hour extends DefaultEntity_1.default {
 };

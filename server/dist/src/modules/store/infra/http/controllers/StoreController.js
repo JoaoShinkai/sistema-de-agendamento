@@ -3,9 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const CreateStoreService_1 = __importDefault(require("@modules/store/services/CreateStoreService"));
-const LoginStoreService_1 = __importDefault(require("@modules/store/services/LoginStoreService"));
-const UpdateStoreService_1 = __importDefault(require("@modules/store/services/UpdateStoreService"));
+const CreateStoreService_1 = __importDefault(require("../../../services/CreateStoreService"));
+const LoginStoreService_1 = __importDefault(require("../../../services/LoginStoreService"));
+const UpdateStoreService_1 = __importDefault(require("../../../services/UpdateStoreService"));
 const tsyringe_1 = require("tsyringe");
 class StoreController {
     async create(req, res, next) {

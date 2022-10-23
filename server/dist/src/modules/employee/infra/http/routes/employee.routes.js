@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.employeeRoutes = void 0;
-const create_employee_schema_1 = __importDefault(require("@modules/employee/schemas/create-employee.schema"));
-const storeAuth_1 = __importDefault(require("@shared/infra/http/middlewares/storeAuth"));
+const create_employee_schema_1 = __importDefault(require("../../../schemas/create-employee.schema"));
+const storeAuth_1 = __importDefault(require("../../../../../shared/infra/http/middlewares/storeAuth"));
 const celebrate_1 = require("celebrate");
 const express_1 = require("express");
 const EmployeeController_1 = __importDefault(require("../controllers/EmployeeController"));

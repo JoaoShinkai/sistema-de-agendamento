@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hourRoutes = void 0;
-const create_hour_schema_1 = __importDefault(require("@modules/hour/schemas/create-hour.schema"));
-const storeAuth_1 = __importDefault(require("@shared/infra/http/middlewares/storeAuth"));
+const create_hour_schema_1 = __importDefault(require("../../../schemas/create-hour.schema"));
+const storeAuth_1 = __importDefault(require("../../../../../shared/infra/http/middlewares/storeAuth"));
 const celebrate_1 = require("celebrate");
 const express_1 = require("express");
 const HourController_1 = require("../controllers/HourController");

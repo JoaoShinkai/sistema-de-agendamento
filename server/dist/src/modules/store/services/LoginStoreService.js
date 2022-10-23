@@ -15,7 +15,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const AppError_1 = require("@shared/errors/AppError");
+const AppError_1 = require("../../../shared/errors/AppError");
 const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const tsyringe_1 = require("tsyringe");

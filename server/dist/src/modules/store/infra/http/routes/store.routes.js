@@ -4,10 +4,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.storeRoutes = void 0;
-const AuthController_1 = require("@modules/auth/AuthController");
-const create_store_schema_1 = __importDefault(require("@modules/store/schemas/create-store.schema"));
-const update_store_schema_1 = __importDefault(require("@modules/store/schemas/update-store.schema"));
-const storeAuth_1 = __importDefault(require("@shared/infra/http/middlewares/storeAuth"));
+const AuthController_1 = require("../../../../auth/AuthController");
+const create_store_schema_1 = __importDefault(require("../../../schemas/create-store.schema"));
+const update_store_schema_1 = __importDefault(require("../../../schemas/update-store.schema"));
+const storeAuth_1 = __importDefault(require("../../../../../shared/infra/http/middlewares/storeAuth"));
 const celebrate_1 = require("celebrate");
 const express_1 = require("express");
 const StoreController_1 = __importDefault(require("../controllers/StoreController"));
